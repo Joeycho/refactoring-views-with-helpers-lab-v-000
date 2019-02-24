@@ -10,7 +10,7 @@ class Artist < ActiveRecord::Base
       self.name = name
       self.save
     else
-
-    end
+      errors.add(:name, "The given name is not valid")
+    end      
   end
 end
