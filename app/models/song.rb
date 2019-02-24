@@ -16,7 +16,7 @@ class Song < ActiveRecord::Base
         self.artist.name = name
         self.artist.save
       else
-        artist = Artist.find_or_create_by(name: name)
+        self.artist = Artist.find_or_create_by(name: name)
       end
     else
       errors.add(:artist_name, "The given name is not valid")
