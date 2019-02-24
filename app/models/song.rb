@@ -18,8 +18,7 @@ class Song < ActiveRecord::Base
         self.artist = Artist.find_or_create_by(name: name)
       end
     else
-      prompt("Add artist")
-      redirect_to edit_song_path
+      errors.add(:artist_name, "Invalid name format!")
     end
   end
 end
