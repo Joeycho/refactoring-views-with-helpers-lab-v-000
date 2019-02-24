@@ -19,7 +19,7 @@ class Song < ActiveRecord::Base
       end
     else
       prompt("Add artist")
-      redirect_to 'edit'
+      redirect_to edit_song_path
     end
   end
 end
