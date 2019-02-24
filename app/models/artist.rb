@@ -1,7 +1,9 @@
+require 'pry'
 class Artist < ActiveRecord::Base
   has_many :songs
 
   def artist_name
+    binding.pry
     self.name
   end
 
