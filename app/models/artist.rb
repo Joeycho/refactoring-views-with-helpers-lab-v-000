@@ -11,6 +11,6 @@ class Artist < ActiveRecord::Base
       self.save
     else
 
-    end      
+    end
   end
 end
