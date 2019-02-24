@@ -5,7 +5,7 @@ class Song < ActiveRecord::Base
     if self.artist != nil
       self.artist.name
     else
-      error.add(:artist_name, "There is no artist for this song")
+      errors.add(:artist_name, "There is no artist for this song")
     end
   end
 
