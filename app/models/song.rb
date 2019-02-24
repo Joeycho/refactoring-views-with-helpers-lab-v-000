@@ -2,7 +2,11 @@ class Song < ActiveRecord::Base
   belongs_to :artist
 
   def artist_name
-    self.artist.name
+    if self.artist != nil
+      self.artist.name
+    else
+      error.add(:artist_name, "There is no artist for this song")
+    end
   end
 
   def artist_name=(name)
